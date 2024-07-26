@@ -86,6 +86,7 @@ class BillOfMaterials(models.Model):
         managed = True
         db_table = 'bill_of_materials'
 
+# kalkulasi quantity dalam satu batch
     def save(self, *args, **kwargs):
         self.quantity_per_batch = self.quantity_per_unit * self.formula_id.batch_size
         super(BillOfMaterials, self).save(*args, **kwargs)
