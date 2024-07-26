@@ -76,9 +76,9 @@ class MasterMaterial(models.Model):
         db_table = 'master_material'
 
 class BillOfMaterials(models.Model):
-    formula_id = models.ForeignKey('MasterFormula', models.CASCADE)
-    material_phase_id = models.ForeignKey('MasterMaterialPhase', models.CASCADE)
-    material_id = models.ForeignKey('MasterMaterial', models.CASCADE)
+    formula_id = models.ForeignKey('MasterFormula', models.CASCADE, db_column='formula_id')
+    material_phase_id = models.ForeignKey('MasterMaterialPhase', models.CASCADE, db_column='material_phase_id')
+    material_id = models.ForeignKey('MasterMaterial', models.CASCADE, db_column='material_id')
     quantity_per_unit = models.DecimalField(max_digits=10, decimal_places=5)
     quantity_per_batch = models.DecimalField(max_digits=10, decimal_places=5, editable=False)
 
