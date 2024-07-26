@@ -34,7 +34,7 @@ class MasterProduct(models.Model):
         db_table = 'master_product'
 
 class MasterFormula(models.Model):
-    product_code = models.ForeignKey('MasterProduct', models.CASCADE)
+    product_id = models.ForeignKey(MasterProduct, on_delete=models.CASCADE, db_column='product_id')
     formula_code = models.CharField(unique=True, max_length=50)
     aktivitas_formulasi = models.TextField(
         max_length=50,
