@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ebpo',
     'rest_framework',
+    'login_app',
 ]
 
 MIDDLEWARE = [
